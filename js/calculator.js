@@ -1,11 +1,11 @@
 window.onload = function() {
-  var keys         = document.getElementsByTagName('button'),
+  let keys         = document.getElementsByTagName('button'),
       operators    = ['/', '*', '-', '+', '%'],
       lastOperator = '',
       decimalAdded = false;
-  for (var i = 0; i < keys.length; i++) {
+  for (let i = 0; i < keys.length; i++) {
       keys[i].onclick = function() {
-          var keyValue    = this.innerHTML,
+          let keyValue    = this.innerHTML,
               detail      = document.getElementById('detail'),
               detailValue = detail.innerHTML,
               lastChar    = detailValue[detailValue.length - 1],
@@ -55,7 +55,7 @@ window.onload = function() {
                               detail.innerHTML = Math.abs(eval(detailValue));
                           }
                       } else {
-                          var array     = detail.innerHTML.split(lastOperator),
+                          let array     = detail.innerHTML.split(lastOperator),
                               lastIndex = array.length - 1,
                               newDetail = '',
                               oldDetail = '';
@@ -66,7 +66,7 @@ window.onload = function() {
                               newDetail = Math.abs(eval(array[lastIndex]));
                           }
 
-                          for (var i = 0; i < lastIndex; i++) {
+                          for (let i = 0; i < lastIndex; i++) {
                               oldDetail += array[i] + lastOperator;
                           }
 
